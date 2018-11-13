@@ -20,17 +20,40 @@ $margin: 3vh;
   @return map-get($colors, $color-name);
 };
 
+
+$galaxyS5: 414px;
+$desktop: 840px;
+
+
+@mixin galaxyS5 {
+  @media(min-width: #{$galaxyS5}){
+    @content;
+  }
+}
+@mixin desktop {
+  @media(min-width: #{$desktop}){
+    @content;
+  }
+}
+
 html, body{
   height: 100%;
   background-color: color(white)
 }
 
 .sidebar-wrapper {
-    clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 80%, 0 100%, 0 0);
+  clip-path: polygon(50% 0%, 100% 0, 100% 80%, 0 100%, 0 0);
+
     background-color: color(primary);
     padding: $padding * 4;
     min-width: 100vw;
     min-height: 85vh;
+
+    @include desktop {
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    }
+
 
   ul {
     li {
@@ -43,6 +66,26 @@ html, body{
       }
     }
   }
+    // //main
+    // @include desktop {
+    //   display: grid;
+    //   grid-template-columns: 50% auto;
+    //   grid-template-areas: "primary card";
+    // }
+    //
+    // //
+    // @include desktop {
+    //   grid-area: card;
+    //   height: fit-content;
+    //   align-self: center;
+    //   margin: 1em;
+    // }
+    //
+    // @include desktop {
+    //   grid-area: primary;
+    //   text-align: left;
+    //   margin: 4em 0 0 4em;
+    // }
 
   #greet {
     font-family: 'Abril Fatface', cursive;
@@ -55,7 +98,7 @@ html, body{
     margin-top: $margin * 1;
   }
 
-  #info {
+  #name {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5vh;
     line-height: 7vh;
@@ -63,30 +106,32 @@ html, body{
     color: color(nasty);
     margin-top: $margin * 3;
   }
-  #quote {
-    font-family: 'Vollkorn', serif;
-    font-size: 3vh;
-    color: color(bright);
-    margin-top: $margin * 3;
-    transform: rotate(-17deg);
-    position: absolute;
-    top: 63vh;
-    right: 30vw;
-    z-index: 1;
-  }
+
+}
+#quoteTop {
+  font-family: 'Vollkorn', serif;
+  font-size: 3vh;
+  color: color(bright);
+  margin-top: $margin * 3;
+  transform: rotate(-17deg);
+  position: absolute;
+  top: 63vh;
+  right: 30vw;
+  z-index: 1;
+}
+#quoteBot {
+  font-family: 'Vollkorn', serif;
+  font-size: 3vh;
+  font-weight: bold;
+  color: color(primary);
+  transform: rotate(-16deg);
+  position: absolute;
+  top: 77vh;
+  right: 25vw;
 }
 
-.content-wrapper {
-  #quote {
-    font-family: 'Vollkorn', serif;
-    font-size: 3vh;
-    font-weight: bold;
-    color: color(primary);
-    transform: rotate(-16deg);
-    position: absolute;
-    top: 77vh;
-    right: 25vw;
-  }
+.main-wrapper {
+
   #title {
     font-family: 'Abril Fatface', cursive;
     font-size: 5vh;
@@ -95,7 +140,41 @@ html, body{
     color: color(cool);
     margin: $margin *2;
   }
-  .card {
-    width: 60%;
+
+}
+
+.about-wrapper{
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
+clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
+  background-color: color(primary);
+  width: 100vw;
+  min-height: 100vh;
+  margin-top: $margin * 3;
+
+  .space{
+    height: 20px;
   }
+
+  #title {
+    position: relative;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5vh;
+    text-align: center;
+    font-weight: bolder;
+    color: color(bright);
+    margin: $margin *4 auto $margin *2;
+    z-index: 2;
+  }
+  img{
+    border-radius: 230px;
+    width: 220px;
+    margin-left: $margin *2;
+  }
+  .card{
+    border: none;
+    background-color: inherit;
+  }
+
+    color: color(white);
+
 }
