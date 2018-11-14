@@ -10,7 +10,8 @@ $colors: (
   cool: #31AAF3,
   nasty: #C0BE4D,
   bright: #FFFB25,
-  white: #fff
+  white: #fff,
+  default: #000
 );
 
 $padding: 1vh;
@@ -44,8 +45,17 @@ $desktop: 840px;
 
 body{
   height: 100%;
-  max-width: 100vw;
-  background-color: color(white)
+  // max-width: 100vh;
+}
+
+h1{
+  font-size: 2em;
+}
+h2{
+  font-size: 1.5em;
+}
+h3{
+  font-size: 1.17em;
 }
 
 .sidebar-wrapper {
@@ -54,7 +64,6 @@ body{
 
     background-color: color(primary);
     padding: $padding * 4;
-    min-width: inherit;
     min-height: 85vh;
 
   ul {
@@ -89,7 +98,18 @@ body{
     margin-top: $margin * 3;
   }
 
+  @include desktop {
+    -webkit-clip-path: inset(0%);
+    // clip-path: inset(0 40% 0 0);
+    // width: 1200px;
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+
+  }
 }
+
 
 #quoteTop {
   font-family: 'Vollkorn', serif;
@@ -111,6 +131,9 @@ body{
     top: 60vh;
     right: 25vw;
   }
+  @include desktop {
+    position: fixed;
+  }
 }
 #quoteBot {
   font-family: 'Vollkorn', serif;
@@ -128,6 +151,9 @@ body{
   @include ipad {
     transform: rotate(-13deg);
     font-size: 4vh;
+  }
+  @include desktop {
+    position: fixed;
   }
 }
 
@@ -154,25 +180,31 @@ body{
     -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
     background-color: color(primary);
-    // width: 100vw;
-    // min-height: 100vh;
+    //width: 100vw;
+    min-height: 100vh;
     margin-top: $margin * 3;
     color: color(white);
-    padding: $padding * 4;
-    min-width: 100vw;
-    min-height: 85vh;
+  }
+  @include desktop {
+    width: 50vw;
+    margin: 0 0 0 650px;
+    overflow-y: scroll;
+    #title{
+      color: color(primary);
+    }
+    .about-wrapper{
+      -webkit-clip-path: inset(0%);
+      clip-path: inset(0%);
+      max-height: 100vh;
+
+      background-color: color(white);
+      color: color(default);
+    }
   }
 }
 
 
 .about-wrapper{
-  // -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
-  // clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
-  // background-color: color(primary);
-  // width: 100vw;
-  // min-height: 100vh;
-  // margin-top: $margin * 3;
-  // color: color(white);
 
   .space{
     height: 20px;
@@ -202,6 +234,14 @@ body{
     @include ipad {
       img{
         margin-left: $margin *8;
+      }
+    }
+    @include desktop {
+      #title{
+        color: color(primary);
+      }
+      img{
+        margin-left: $margin *10;
       }
     }
 
