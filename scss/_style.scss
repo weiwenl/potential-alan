@@ -21,12 +21,16 @@ $margin: 3vh;
   @return map-get($colors, $color-name);
 };
 
-
+$pixel2XL: 411px;
 $iphonex: 375px;
 $ipad: 768px;
 $desktop: 840px;
 
-
+@mixin pixel2XL {
+  @media(min-width: #{$pixel2XL}){
+    @content;
+  }
+}
 @mixin iphonex {
   @media(min-width: #{$iphonex}){
     @content;
@@ -44,16 +48,61 @@ $desktop: 840px;
 }
 
 h1{
-  font-size: 3em;
+  font-size: 2em;
+  @include pixel2XL {
+    font-size: 2.5em;
+  }
+  @include iphonex {
+    font-size: 2.6em;
+  }
+  @include ipad {
+    font-size: 2.7em;
+  }
+  @include desktop {
+    font-size: 3em;
+  }
 }
 h2{
-  font-size: 2em;
+  font-size: 1.5em;
+  @include pixel2XL {
+    font-size: 1.8em;
+  }
+  @include iphonex {
+    font-size: 1.7em;
+  }
+  @include ipad {
+    font-size: 2.2em;
+  }
+  @include desktop {
+    font-size: 2.4em;
+  }
 }
 h3{
-  font-size: 1.17em;
+  font-size: 1.2em;
+  @include pixel2XL {
+    font-size: 1.5em;
+  }
+  @include iphonex {
+    font-size: 1.5em;
+  }
+  @include ipad {
+    font-size: 2em;
+  }
 }
 p{
-  font-size: 1.3em;
+  font-size: 1em;
+  @include pixel2XL {
+    font-size: 1.15em;
+  }
+  @include iphonex {
+    font-size: 1.15em;
+  }
+  @include ipad {
+    font-size: 1.3em;
+  }
+  @include desktop {
+    font-size: 1.3em;
+  }
 }
 
 @include desktop {
@@ -88,8 +137,11 @@ p{
     font-weight: bolder;
     text-transform: uppercase;
     color: color(white);
-    padding-top: $padding * 3;
-    margin-top: $margin * 1;
+    padding-top: $padding * 5;
+    //margin-top: $margin * 1;
+    @include desktop {
+      padding-top: $padding * 6;
+    }
   }
 
   #name {
@@ -97,7 +149,8 @@ p{
     line-height: 7vh;
     text-align: center;
     color: color(nasty);
-    margin-top: $margin * 3;
+    padding-top: $padding * 5;
+    //margin-top: $margin * 3;
   }
 
   #quoteTop {
@@ -105,6 +158,9 @@ p{
     color: color(cool);
     text-align: center;
     margin-top: $margin * 1;
+    @include ipad {
+      margin-top: $margin * 2;
+    }
     @include desktop {
       margin-top: $margin * 3;
     }
@@ -115,6 +171,9 @@ p{
     color: color(bright);
     text-align: center;
     margin-top: $margin * 1;
+    @include ipad {
+      margin-top: $margin * 1.5;
+    }
     @include desktop {
       margin-top: $margin * 2;
     }
@@ -200,10 +259,6 @@ p{
     background-color: inherit;
   }
 
-
-    @include ipad {
-
-    }
     @include desktop {
       #title{
         color: color(primary);

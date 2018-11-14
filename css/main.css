@@ -4,16 +4,61 @@
   border: 0; }
 
 h1 {
-  font-size: 3em; }
+  font-size: 2em; }
+  @media (min-width: 411px) {
+    h1 {
+      font-size: 2.5em; } }
+  @media (min-width: 375px) {
+    h1 {
+      font-size: 2.6em; } }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.7em; } }
+  @media (min-width: 840px) {
+    h1 {
+      font-size: 3em; } }
 
 h2 {
-  font-size: 2em; }
+  font-size: 1.5em; }
+  @media (min-width: 411px) {
+    h2 {
+      font-size: 1.8em; } }
+  @media (min-width: 375px) {
+    h2 {
+      font-size: 1.7em; } }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 2.2em; } }
+  @media (min-width: 840px) {
+    h2 {
+      font-size: 2.4em; } }
 
 h3 {
-  font-size: 1.17em; }
+  font-size: 1.2em; }
+  @media (min-width: 411px) {
+    h3 {
+      font-size: 1.5em; } }
+  @media (min-width: 375px) {
+    h3 {
+      font-size: 1.5em; } }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 2em; } }
 
 p {
-  font-size: 1.3em; }
+  font-size: 1em; }
+  @media (min-width: 411px) {
+    p {
+      font-size: 1.15em; } }
+  @media (min-width: 375px) {
+    p {
+      font-size: 1.15em; } }
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.3em; } }
+  @media (min-width: 840px) {
+    p {
+      font-size: 1.3em; } }
 
 @media (min-width: 840px) {
   .wrapper {
@@ -37,19 +82,24 @@ p {
     font-weight: bolder;
     text-transform: uppercase;
     color: #fff;
-    padding-top: 3vh;
-    margin-top: 3vh; }
+    padding-top: 5vh; }
+    @media (min-width: 840px) {
+      .sidebar-wrapper #greet {
+        padding-top: 6vh; } }
   .sidebar-wrapper #name {
     font-family: 'Montserrat', sans-serif;
     line-height: 7vh;
     text-align: center;
     color: #C0BE4D;
-    margin-top: 9vh; }
+    padding-top: 5vh; }
   .sidebar-wrapper #quoteTop {
     font-family: 'Vollkorn', serif;
     color: #31AAF3;
     text-align: center;
     margin-top: 3vh; }
+    @media (min-width: 768px) {
+      .sidebar-wrapper #quoteTop {
+        margin-top: 6vh; } }
     @media (min-width: 840px) {
       .sidebar-wrapper #quoteTop {
         margin-top: 9vh; } }
@@ -59,6 +109,9 @@ p {
     color: #FFFB25;
     text-align: center;
     margin-top: 3vh; }
+    @media (min-width: 768px) {
+      .sidebar-wrapper #quoteBot {
+        margin-top: 4.5vh; } }
     @media (min-width: 840px) {
       .sidebar-wrapper #quoteBot {
         margin-top: 6vh; } }
