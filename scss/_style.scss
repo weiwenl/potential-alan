@@ -44,7 +44,7 @@ $desktop: 840px;
 }
 
 body{
-  height: 100%;
+  //####height: 100%;
   // max-width: 100vh;
 }
 
@@ -56,6 +56,12 @@ h2{
 }
 h3{
   font-size: 1.17em;
+}
+
+@include desktop {
+  .con{
+    display: flex;
+  }
 }
 
 .sidebar-wrapper {
@@ -101,61 +107,68 @@ h3{
   @include desktop {
     -webkit-clip-path: inset(0%);
     // clip-path: inset(0 40% 0 0);
-    // width: 1200px;
-    width: 50vw;
-    height: 100vh;
-    position: fixed;
+    //width: 1200px;
+    flex-grow: 0;
+    max-width: 50vw;
+    //####max-height: 100vh;
+
+
     z-index: 1;
+    div.sticky{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 20px;
+    }
 
   }
 }
 
 
-#quoteTop {
-  font-family: 'Vollkorn', serif;
-  font-size: 3vh;
-  color: color(bright);
-  margin-top: $margin * 3;
-  transform: rotate(-17deg);
-  position: absolute;
-  top: 63vh;
-  right: 30vw;
-  z-index: 1;
-
-  @include iphonex {
-    transform: rotate(-20deg);
-  }
-  @include ipad {
-    transform: rotate(-14deg);
-    font-size: 4vh;
-    top: 60vh;
-    right: 25vw;
-  }
-  @include desktop {
-    position: fixed;
-  }
-}
-#quoteBot {
-  font-family: 'Vollkorn', serif;
-  font-size: 3vh;
-  font-weight: bold;
-  color: color(primary);
-  transform: rotate(-16deg);
-  position: absolute;
-  top: 77vh;
-  right: 25vw;
-
-  @include iphonex {
-    transform: rotate(-20deg);
-  }
-  @include ipad {
-    transform: rotate(-13deg);
-    font-size: 4vh;
-  }
-  @include desktop {
-    position: fixed;
-  }
-}
+// #quoteTop {
+//   font-family: 'Vollkorn', serif;
+//   font-size: 3vh;
+//   color: color(bright);
+//   margin-top: $margin * 3;
+//   transform: rotate(-17deg);
+//   position: absolute;
+//   top: 63vh;
+//   right: 30vw;
+//   z-index: 1;
+//
+//   @include iphonex {
+//     transform: rotate(-20deg);
+//   }
+//   @include ipad {
+//     transform: rotate(-14deg);
+//     font-size: 4vh;
+//     top: 60vh;
+//     right: 25vw;
+//   }
+//   @include desktop {
+//     //position: fixed;
+//   }
+// }
+// #quoteBot {
+//   font-family: 'Vollkorn', serif;
+//   font-size: 3vh;
+//   font-weight: bold;
+//   color: color(primary);
+//   transform: rotate(-16deg);
+//   position: absolute;
+//   top: 77vh;
+//   right: 25vw;
+//
+//   @include iphonex {
+//     transform: rotate(-20deg);
+//   }
+//   @include ipad {
+//     transform: rotate(-13deg);
+//     font-size: 4vh;
+//   }
+//   @include desktop {
+//     //position: fixed;
+//   }
+// }
 
 .main-wrapper {
 
@@ -168,12 +181,12 @@ h3{
     margin: $margin *2;
   }
   .card{
-    width: 90%
+    width: 90%;
   }
 
   @include ipad {
     .card{
-      width: 80%
+      width: 80%;
     }
   }
   .about-wrapper{
@@ -181,21 +194,20 @@ h3{
     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
     background-color: color(primary);
     //width: 100vw;
-    min-height: 100vh;
+    //min-height: 100vh;
     margin-top: $margin * 3;
     color: color(white);
   }
   @include desktop {
-    width: 50vw;
-    margin: 0 0 0 650px;
-    overflow-y: scroll;
+
+    //margin: 0 0 0 650px;
     #title{
       color: color(primary);
     }
     .about-wrapper{
       -webkit-clip-path: inset(0%);
       clip-path: inset(0%);
-      max-height: 100vh;
+      //max-height: 100vh;
 
       background-color: color(white);
       color: color(default);
@@ -223,7 +235,7 @@ h3{
   img{
     border-radius: 230px;
     width: 220px;
-    margin-left: $margin *3;
+    //margin-left: $margin *3;
   }
   .card{
     border: none;
@@ -232,16 +244,14 @@ h3{
 
 
     @include ipad {
-      img{
-        margin-left: $margin *8;
-      }
+
     }
     @include desktop {
       #title{
         color: color(primary);
       }
       img{
-        margin-left: $margin *10;
+        //margin-left: $margin *24.5;
       }
     }
 
