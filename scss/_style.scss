@@ -43,23 +43,21 @@ $desktop: 840px;
   }
 }
 
-body{
-  //####height: 100%;
-  // max-width: 100vh;
-}
-
 h1{
-  font-size: 2em;
+  font-size: 3em;
 }
 h2{
-  font-size: 1.5em;
+  font-size: 2em;
 }
 h3{
   font-size: 1.17em;
 }
+p{
+  font-size: 1.3em;
+}
 
 @include desktop {
-  .con{
+  .wrapper{
     display: flex;
   }
 }
@@ -86,7 +84,6 @@ h3{
 
   #greet {
     font-family: 'Abril Fatface', cursive;
-    font-size: 5vh;
     text-align: center;
     font-weight: bolder;
     text-transform: uppercase;
@@ -97,23 +94,37 @@ h3{
 
   #name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5vh;
     line-height: 7vh;
     text-align: center;
     color: color(nasty);
     margin-top: $margin * 3;
   }
 
+  #quoteTop {
+    font-family: 'Vollkorn', serif;
+    color: color(cool);
+    text-align: center;
+    margin-top: $margin * 1;
+    @include desktop {
+      margin-top: $margin * 3;
+    }
+  }
+  #quoteBot {
+    font-family: 'Vollkorn', serif;
+    font-weight: bold;
+    color: color(bright);
+    text-align: center;
+    margin-top: $margin * 1;
+    @include desktop {
+      margin-top: $margin * 2;
+    }
+  }
+
+
   @include desktop {
     -webkit-clip-path: inset(0%);
-    // clip-path: inset(0 40% 0 0);
-    //width: 1200px;
     flex-grow: 0;
     max-width: 50vw;
-    //####max-height: 100vh;
-
-
-    z-index: 1;
     div.sticky{
       position: -webkit-sticky;
       position: sticky;
@@ -123,63 +134,16 @@ h3{
   }
 }
 
-
-// #quoteTop {
-//   font-family: 'Vollkorn', serif;
-//   font-size: 3vh;
-//   color: color(bright);
-//   margin-top: $margin * 3;
-//   transform: rotate(-17deg);
-//   position: absolute;
-//   top: 63vh;
-//   right: 30vw;
-//   z-index: 1;
-//
-//   @include iphonex {
-//     transform: rotate(-20deg);
-//   }
-//   @include ipad {
-//     transform: rotate(-14deg);
-//     font-size: 4vh;
-//     top: 60vh;
-//     right: 25vw;
-//   }
-//   @include desktop {
-//     //position: fixed;
-//   }
-// }
-// #quoteBot {
-//   font-family: 'Vollkorn', serif;
-//   font-size: 3vh;
-//   font-weight: bold;
-//   color: color(primary);
-//   transform: rotate(-16deg);
-//   position: absolute;
-//   top: 77vh;
-//   right: 25vw;
-//
-//   @include iphonex {
-//     transform: rotate(-20deg);
-//   }
-//   @include ipad {
-//     transform: rotate(-13deg);
-//     font-size: 4vh;
-//   }
-//   @include desktop {
-//     //position: fixed;
-//   }
-// }
-
 .main-wrapper {
 
   #title {
     font-family: 'Abril Fatface', cursive;
-    font-size: 5vh;
     text-align: center;
     font-weight: bolder;
     color: color(cool);
     margin: $margin *2;
   }
+
   .card{
     width: 90%;
   }
@@ -193,21 +157,17 @@ h3{
     -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 13%);
     background-color: color(primary);
-    //width: 100vw;
-    //min-height: 100vh;
     margin-top: $margin * 3;
     color: color(white);
   }
   @include desktop {
 
-    //margin: 0 0 0 650px;
     #title{
       color: color(primary);
     }
     .about-wrapper{
       -webkit-clip-path: inset(0%);
       clip-path: inset(0%);
-      //max-height: 100vh;
 
       background-color: color(white);
       color: color(default);
@@ -225,17 +185,15 @@ h3{
   #title {
     position: relative;
     font-family: 'Abril Fatface', cursive;
-    font-size: 5vh;
     text-align: center;
     font-weight: bolder;
     color: color(bright);
-    margin: $margin *4 auto $margin *2.5;
+    margin: $margin *4 auto $margin *1.5;
     z-index: 2;
   }
   img{
     border-radius: 230px;
     width: 220px;
-    //margin-left: $margin *3;
   }
   .card{
     border: none;
@@ -249,9 +207,6 @@ h3{
     @include desktop {
       #title{
         color: color(primary);
-      }
-      img{
-        //margin-left: $margin *24.5;
       }
     }
 

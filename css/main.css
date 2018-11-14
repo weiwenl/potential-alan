@@ -4,16 +4,19 @@
   border: 0; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 3em; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 2em; }
 
 h3 {
   font-size: 1.17em; }
 
+p {
+  font-size: 1.3em; }
+
 @media (min-width: 840px) {
-  .con {
+  .wrapper {
     display: flex; } }
 
 .sidebar-wrapper {
@@ -30,7 +33,6 @@ h3 {
       font-size: 5vh; }
   .sidebar-wrapper #greet {
     font-family: 'Abril Fatface', cursive;
-    font-size: 5vh;
     text-align: center;
     font-weight: bolder;
     text-transform: uppercase;
@@ -39,17 +41,32 @@ h3 {
     margin-top: 3vh; }
   .sidebar-wrapper #name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5vh;
     line-height: 7vh;
     text-align: center;
     color: #C0BE4D;
     margin-top: 9vh; }
+  .sidebar-wrapper #quoteTop {
+    font-family: 'Vollkorn', serif;
+    color: #31AAF3;
+    text-align: center;
+    margin-top: 3vh; }
+    @media (min-width: 840px) {
+      .sidebar-wrapper #quoteTop {
+        margin-top: 9vh; } }
+  .sidebar-wrapper #quoteBot {
+    font-family: 'Vollkorn', serif;
+    font-weight: bold;
+    color: #FFFB25;
+    text-align: center;
+    margin-top: 3vh; }
+    @media (min-width: 840px) {
+      .sidebar-wrapper #quoteBot {
+        margin-top: 6vh; } }
   @media (min-width: 840px) {
     .sidebar-wrapper {
       -webkit-clip-path: inset(0%);
       flex-grow: 0;
-      max-width: 50vw;
-      z-index: 1; }
+      max-width: 50vw; }
       .sidebar-wrapper div.sticky {
         position: -webkit-sticky;
         position: sticky;
@@ -57,7 +74,6 @@ h3 {
 
 .main-wrapper #title {
   font-family: 'Abril Fatface', cursive;
-  font-size: 5vh;
   text-align: center;
   font-weight: bolder;
   color: #31AAF3;
@@ -92,11 +108,10 @@ h3 {
 .about-wrapper #title {
   position: relative;
   font-family: 'Abril Fatface', cursive;
-  font-size: 5vh;
   text-align: center;
   font-weight: bolder;
   color: #FFFB25;
-  margin: 12vh auto 7.5vh;
+  margin: 12vh auto 4.5vh;
   z-index: 2; }
 
 .about-wrapper img {
